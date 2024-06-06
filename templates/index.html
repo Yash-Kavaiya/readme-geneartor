@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gen AI README Beautifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Gen AI README Beautifier</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <form id="readmeForm">
+                    <div class="form-group">
+                        <label for="readmeText">README Text</label>
+                        <textarea class="form-control" id="readmeText" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="useTable">Use Table</label>
+                        <select class="form-control" id="useTable">
+                            <option value="true">Use Table</option>
+                            <option value="false">Don't Use Table</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="useIcon">Use Icon</label>
+                        <select class="form-control" id="useIcon">
+                            <option value="true">Use Icon</option>
+                            <option value="false">Don't Use Icon</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="addLicense">Add License</label>
+                        <select class="form-control" id="addLicense">
+                            <option value="true">Add License</option>
+                            <option value="false">Don't Add License</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="addContribution">Add Contribution</label>
+                        <select class="form-control" id="addContribution">
+                            <option value="true">Add Contribution</option>
+                            <option value="false">Don't Add Contribution</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="addAuthor">Add Author Details</label>
+                        <select class="form-control" id="addAuthor">
+                            <option value="true">Add Author</option>
+                            <option value="false">Don't Add Author</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="generateBtn">Generate</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h2>Generated README</h2>
+                <pre id="generatedReadme" class="border p-3"></pre>
+                <button class="btn btn-info" id="copyBtn">Copy to Clipboard</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+</body>
+</html>

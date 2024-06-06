@@ -1,0 +1,8 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#generatedReadme {
+    white-space: pre-wrap;
+    background-color: #f8f9fa;
+}
